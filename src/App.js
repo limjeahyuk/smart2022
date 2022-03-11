@@ -18,8 +18,6 @@ const testData = [
     text: "재산권의 행사는 공공복리에 적합하도록 하여야 한다.",
     imgUrl: "http://image.auction.co.kr/itemimage/14/97/95/1497951b06.jpg"
   }
-  
-  
 ]
 
 function App() {
