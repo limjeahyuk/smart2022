@@ -1,51 +1,65 @@
-import { faker } from '@faker-js/faker';
-import logo from './image.jpg';
+import faker from '@faker-js/faker';//영문 버전의 faker.js
+import faker_ko from '@faker-js/faker/locale/ko' // 한글 버전의 faker.js
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 import './App.css';
 
-// JSX
-// javascript
+let text = `testkdjsfljfadsklljfaslda`;
 
-const testData = [
-  {
-    text: "누구든지 체포 또는 구속을 당한 때에는 적부의 심사를 법원에 청구할 권리를 가진다. ",
-    imgUrl: "https://img.insight.co.kr/static/2020/09/22/700/97so3hz72p4nq982if5l.jpg"
-  },
-  {
-    text: "국무총리는 국회의 동의를 얻어 대통령이 임명한다. ",
-    imgUrl: "https://upload.wikimedia.org/wikipedia/ko/thumb/4/4a/%EC%8B%A0%EC%A7%B1%EA%B5%AC.png/230px-%EC%8B%A0%EC%A7%B1%EA%B5%AC.png"
-  },
-  {
-    text: "재산권의 행사는 공공복리에 적합하도록 하여야 한다.",
-    imgUrl: "http://image.auction.co.kr/itemimage/14/97/95/1497951b06.jpg"
-  }
-]
+
 
 function App() {
-  const h1Element = <h1>H1 제목 태그입니다.</h1>
-  const imgElement = <img src={logo} className="App-logo" alt="logo" />
+  const userDatas = [];
+
+  while(userDatas.length < 5){
+    userDatas.push({
+      avatar: faker.image.avatar(),
+      name: `${faker_ko.name.lastName()}${faker_ko.name.firstName()}`,
+      email: faker.internet.email(),
+      jobTitle: faker.name.jobTitle(),
+      phoneNo: faker.phone.phoneNumber()
+    }
+  )
+  }
+
+  const userCards = userDatas.map((userData, idx) => {
+    return <Card sx={{ maxWidth: 345 }} key={idx}>
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        height="140"
+        image={userData.avatar}
+        alt={userData.name}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {userData.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {userData.jobTitle}<br/>
+          {userData.email}<br/>
+          {userData.phoneNo}
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>
+    
+    
+  //   <div key={idx}>
+  //   <h4>{ userData.jobTitle }</h4>
+  //   <img src={ userData.avatar }alt="사용자 프로필용 아바타"></img>
+  //   <h5>{ userData.name }</h5>
+  //   { userData.email }<br />
+  //   { userData.phoneNo }
+  // </div>
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-      
-        {h1Element}
-        {imgElement}
-        
-        <p>
-          짱구 귀여워 5가닥<code>src/App.js</code> and save to reload.
-        </p>
-        <ul>
-          {testData.map((contents)=>{
-           
-            return <div>
-              <img src={faker.image.avatar()} alt="fake 사진"/>
-              {contents.text}
-              <img src={faker.image.cats()} alt="fake 사진"/>
-              </div>
-          })}
-          
-        </ul>
-
-      </header>
+      {userCards}
     </div>
   );
 }
