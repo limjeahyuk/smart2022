@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './App.css';
 
-let text = `testkdjsfljfadsklljfaslda`;
 
 
 
