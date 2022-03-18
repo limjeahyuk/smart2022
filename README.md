@@ -69,3 +69,7 @@ import { faker } from '@faker-js/faker';
 - react는 jsx 사용이 필수는 아니지만, <br>javascript 코드안에서 ui관련 작업을 할때 시각적으로 더 도움이 됨.
 - jsx는 html보다는 javascript에 가깝기 때문에 프로퍼티 명명 규칙을 사용.
     > jsx에서 class > className / tabindex > tabIndex
+
+
+## 03-17
+
