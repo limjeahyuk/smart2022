@@ -31,9 +31,11 @@ function App() {
         setApiError(err);
       }
     };
+    console.log(2);
     callApi();
     console.log('component did mount');
   }, []);
+  console.log(3);
 
   useEffect(() => {
     console.log(`theme 변경된 -> ${useDarkMode}`);
