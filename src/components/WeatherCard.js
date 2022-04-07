@@ -1,5 +1,4 @@
 import { Typography } from '@mui/material';
-import Box from '@mui/material/Box';
 import { weather_mapping_data } from '../dataset/WeatherData';
 import Grid from '@mui/material/Grid';
 
