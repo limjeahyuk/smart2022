@@ -360,3 +360,10 @@ return (
 
 <hr>
 <hr>
+
+## 4.10
+
+안드로이드 복습 완료
+ListView & inflate
+
+추가적으로 react 수업 들어야함.
