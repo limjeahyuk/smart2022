@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-const nosettings = ['Login'];
+// const nosettings = ['Login'];
 
 const TopBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -29,7 +29,6 @@ const TopBar = () => {
       console.log(event);
       setAnchorElUser(event.currentTarget);
     } else {
-      setAnchorE;
     }
   };
 
