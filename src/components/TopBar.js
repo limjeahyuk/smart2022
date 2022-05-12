@@ -32,11 +32,9 @@ const TopBar = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = (setting) => {
+  const handleCloseUserMenu = () => {
     setAnchorElUser(null);
-    if (setting === 'Logout') {
-      setLogin(false);
-    }
+    setLogin(false);
   };
 
   return (
@@ -132,7 +130,7 @@ const TopBar = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={() => handleCloseUserMenu(setting)}>
+                  <MenuItem key={setting} onClick={handleCloseUserMenu()}>
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
